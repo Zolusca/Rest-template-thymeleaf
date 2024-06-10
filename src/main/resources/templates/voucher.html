@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+<div class="card-body">
+    <div th:if="${error}">
+        <div th:each="errorMessage : ${error}">
+            <p th:text="${errorMessage}"></p>
+        </div>
+    </div>
+    <div th:if="${voucher}" th:object="${voucher}">
+        <p th:text="*{name}"></p>
+        <p th:text="*{description}"></p>
+        <p th:text="*{dateStarted}"></p>
+        <p th:text="*{dateExpired}"></p>
+    </div>
+</div>
+
+
+</body>
+</html>
